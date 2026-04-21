@@ -43,6 +43,9 @@ def atualizar_barra_de_leds(temperatura):
     for i in range(qtd_leds_ligados):
         leds[i].value(1)
 
+
+print("Temperatura")
+
 while True:
     try:
         sensor.measure()
