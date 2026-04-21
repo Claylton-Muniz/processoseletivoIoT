@@ -4,7 +4,7 @@
     {
       "label": "Build ESP32 FS (Docker)",
       "type": "shell",
-      "command": "docker build -t esp32-builder -f Dockerfile . && docker run --name esp32-fs-builder esp32-builder /bin/bash && docker cp esp32-fs-builder:/fs.bin . && docker rm esp32-fs-builder",
+      "command": "docker build --no-cache -t esp32-builder -f Dockerfile . && docker run --name esp32-fs-builder esp32-builder /bin/bash && docker cp esp32-fs-builder:/fs.bin . && docker rm esp32-fs-builder",
       "group": {
         "kind": "build",
         "isDefault": true
