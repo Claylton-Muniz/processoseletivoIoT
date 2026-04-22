@@ -114,7 +114,7 @@
       "top": 247.73,
       "left": -525.68,
       "rotate": 180,
-      "attrs": { "temperature": "0" }
+      "attrs": { "temperature": "-1.2" }
     },
     {
       "type": "wokwi-resistor",
@@ -122,6 +122,13 @@
       "top": 234.35,
       "left": -470.4,
       "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": -11.8,
+      "left": -595.2,
+      "attrs": { "color": "green", "xray": "1" }
     }
   ],
   "connections": [
@@ -162,8 +169,8 @@
     [ "esp:21", "bb1:20b.j", "green", [ "h9.6", "v153.6", "h-278.4" ] ],
     [ "bb1:11t.a", "bb1:tn.9", "black", [ "v0" ] ],
     [ "bb1:12t.a", "bb1:tp.10", "red", [ "v0" ] ],
-    [ "esp:19", "bb1:14t.a", "blue", [ "h28.8", "v-86.4", "h-355.2" ] ],
-    [ "esp:18", "bb1:13t.a", "gold", [ "h19.2", "v-105.6", "h-355.2" ] ],
+    [ "esp:19", "bb1:14t.a", "blue", [ "h28.8", "v-96", "h-355.2" ] ],
+    [ "esp:18", "bb1:13t.a", "gold", [ "h19.2", "v-115.2", "h-355.2" ] ],
     [ "oled1:GND", "bb1:11t.b", "", [ "$bb" ] ],
     [ "oled1:VCC", "bb1:12t.b", "", [ "$bb" ] ],
     [ "oled1:SCL", "bb1:13t.b", "", [ "$bb" ] ],
@@ -201,13 +208,15 @@
     [ "bz1:1", "bb1:4t.b", "", [ "$bb" ] ],
     [ "bz1:2", "bb1:3t.b", "", [ "$bb" ] ],
     [ "bb1:4t.a", "bb1:tn.3", "black", [ "v0" ] ],
-    [ "esp:15", "bb1:3t.a", "gold", [ "v0", "h38.4", "v-182.4", "h-470.4" ] ],
+    [ "esp:15", "bb1:3t.a", "gold", [ "h38.4", "v-192", "h-470.4" ] ],
     [ "bb1:bn.14", "temp1:GND", "black", [ "v0" ] ],
     [ "temp1:VCC", "bb1:bp.12", "red", [ "v0" ] ],
     [ "esp:32", "temp1:DQ", "blue", [ "h-38.25", "v153.6", "h-172.8" ] ],
     [ "temp1:DQ", "r1:1", "blue", [ "v0" ] ],
     [ "r1:2", "bb1:bp.22", "red", [ "v0", "h18" ] ],
-    [ "esp:27", "bb1:26b.j", "gold", [ "h-28.65", "v67.2", "h0" ] ]
+    [ "esp:27", "bb1:26b.j", "gold", [ "h-28.65", "v67.2", "h0" ] ],
+    [ "bb1:tn.5", "btn1:1.l", "black", [ "v0" ] ],
+    [ "btn1:2.r", "esp:4", "green", [ "h423.2", "v10" ] ]
   ],
   "dependencies": {}
 }
