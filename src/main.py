@@ -3,6 +3,7 @@ from onewire import OneWire
 from ds18x20 import DS18X20
 from time import sleep, ticks_ms, ticks_diff
 from ssd1306 import SSD1306_I2C
+import json
 
 # Botão de silenciar o alarme junto com entrada com pull-up
 botao = Pin(4, Pin.IN, Pin.PULL_UP)
@@ -99,6 +100,22 @@ while True:
             
             elif ticks_diff(tempo_atual, ultimo_tempo_sensor) >= 750:
                 temperatura_atual = sensor.read_temp(enderecos_sensor[0])
+
+                # Simula um payload JSON para um sistema IoT MQTT ou similar
+                # Define o status em texto
+                status_txt = "Ideal" if temperatura_atual <= -10 else "PERIGO" if temperatura_atual >= 0 else "Cuidado"
+
+                # Cria um dicionário simulando um pacote de dados IoT
+                payload = {
+                    "device_id": "freezer_mamae_01",
+                    "temperatura_c": temperatura_atual,
+                    "status": status_txt,
+                    "alerta_sonoro": temperatura_atual >= 0
+                }
+                
+                # Imprime no formato JSON
+                print(json.dumps(payload))
+
                 atualizar_sistema(temperatura_atual)
                 esperando_conversao = False 
             
