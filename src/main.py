@@ -110,7 +110,7 @@ while True:
                     "device_id": "freezer_mamae_01",
                     "temperatura_c": temperatura_atual,
                     "status": status_txt,
-                    "alerta_sonoro": temperatura_atual >= 0
+                    "alerta_sonoro": temperatura_atual >= 0 and alarme_silenciado == False
                 }
                 
                 # Imprime no formato JSON
