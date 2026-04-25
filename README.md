@@ -240,6 +240,8 @@ Após concluir o desenvolvimento:
 
 ## 1️⃣ Visão Geral da Solução
 
+![Representação](imgs/representacao.png)
+
 - **Objetivo do projeto**: Resolver um problema real e recorrente no varejo (especificamente projetado para um problema enfrentado na mercearia da minha mãe recentemente): a perda de perecíveis por falhas de refrigeração. O projeto entrega um sistema de monitoramento térmico preventivo, com uma arquitetura escalável que pode ser facilmente aplicada tanto em pequenos comércios quanto em grandes plantas industriais.
 
 - **O que o sistema embarcado simulado faz**: Realiza a telemetria contínua de um freezer. O firmware processa os dados e define o estado do equipamento em três níveis: *Ideal* ($\le$ -10°C), *Atenção* (aquecendo) e *Crítico/Perigo* ($\ge$ 0°C). Pensando em escalabilidade para a Nuvem, o sistema possui uma arquitetura IoT-Ready, gerando e formatando payloads em JSON no terminal, simulando a estrutura exata que seria enviada a um Message Broker (como MQTT) em uma aplicação física.
@@ -300,6 +302,8 @@ A arquitetura do firmware foi desenvolvida sob o paradigma de programação não
 ---
 
 ## 3️⃣ Componentes Utilizados na Simulação
+
+![diagrama](imgs/diagrama.png)
 
 - **Placa de Desenvolvimento**: Quem atua como o cérebro do sistema é o ESP32 como definido no próprio projeto antes do fork, executando o firmware MicroPython, gerenciando I/O e temporizadores).
 
